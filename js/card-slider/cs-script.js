@@ -30,6 +30,9 @@ const swiper = new Swiper(".wrapper", {
       slidesPerView: 2,
     },
     1024: {
+      slidesPerView: 2,
+    },
+    1366: {
       slidesPerView: 3,
     },
   },

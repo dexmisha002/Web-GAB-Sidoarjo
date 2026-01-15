@@ -1,7 +1,7 @@
 :root {
   --primary: #b6895b;
   --secondary: #801818;
-  --bg: #010101;
+  --bg: #000;
   --font: #fff;
 }
 
@@ -51,7 +51,7 @@ body {
 .navbar.scrolled {
   /* background-color: rgba(1, 1, 1, 0.9);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
-  backdrop-filter: blur(30px);
+  /* backdrop-filter: blur(30px); */
   box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
 }
 
@@ -152,7 +152,7 @@ body {
   justify-content: center;
 }
 
-.dots li {
+/* .dots li {
   list-style: none;
   width: 10px;
   height: 10px;
@@ -160,11 +160,11 @@ body {
   margin: 20px;
   border-radius: 20px;
   transition: 1s;
-}
+} */
 
-.dots li.active {
+/* .dots li.active {
   width: 30px;
-}
+} */
 
 /* Hero Section */
 .hero {
@@ -268,7 +268,8 @@ body {
 /* About section */
 .about,
 .live-streaming,
-.jadwal {
+.jadwal,
+footer {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -443,7 +444,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   /* border: white 1px solid; */
@@ -452,7 +453,7 @@ body {
 }
 
 .ibadah-content .ibadah-wrapper .wrapper-image span {
-  font-size: 10px;
+  font-size: 0.7rem;
   letter-spacing: 5px;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
@@ -462,7 +463,7 @@ body {
   position: absolute;
   width: 70%;
   height: 50px;
-  top: 65%;
+  top: 67%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
@@ -543,6 +544,7 @@ body {
   margin: 0 0 2rem 0;
   position: relative;
   z-index: 5;
+  /* color: red; */
 }
 
 .jadwal-slide .swiper-button-prev,
@@ -554,7 +556,7 @@ body {
   background: transparent;
   border: 2px solid var(--primary);
   border-radius: 50%;
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -600,10 +602,11 @@ body {
 }
 
 .wrapper {
+  /*atur ukuran box pelayanan*/
   max-width: 1400px;
   padding: 20px 10px;
   margin: 0 auto 35px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .wrapper .card {
@@ -809,7 +812,14 @@ body {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     width: 30rem;
     height: 100vh;
     transition: 0.3s;
@@ -820,7 +830,7 @@ body {
   }
 
   .navbar .navbar-nav a {
-    color: var(--bg);
+    color: var(--font);
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
@@ -932,6 +942,14 @@ body {
   .live-streaming .row .live-content {
     flex: 0 0 50%;
   }
+
+  .wrapper {
+    /*atur ukuran box pelayanan - w=1024px*/
+    max-width: 960px;
+    padding: 20px 10px;
+    margin: 0 auto 35px;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 768px) {
@@ -992,6 +1010,24 @@ body {
   .ibadah-content .ibadah-wrapper .wrapper-image {
     height: 250px;
   }
+
+  .wrapper {
+    /*atur ukuran box pelayanan - w=1024px*/
+    /* max-width: 960px; */
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0 auto 35px;
+    overflow: hidden;
+  }
+
+  .navbar .navbar-nav {
+    width: 20rem;
+  }
+
+  .jadwal-slide .swiper-button-prev,
+  .jadwal-slide .swiper-button-next {
+    display: none;
+  }
 }
 
 /* Contact Us Section */
@@ -1019,7 +1055,7 @@ body {
 .contact-us .subtitle .title::after {
   content: "";
   height: 2px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   display: block;
 }
 
@@ -1032,16 +1068,18 @@ body {
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5%;
+  /* padding: 0 5%; */
+  /* border: 1px solid #fff; */
 }
 
-.contact-info {
+.map {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-shrink: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 .contact-info .info-item {
@@ -1121,10 +1159,10 @@ body {
 
 /* Footer */
 footer {
-  background: #000;
+  background: var(--bg);
   color: #ccc;
   padding: 3rem 2%;
-  border-top: 1px solid rgba(182, 137, 91, 0.3);
+  border-top: 0.2rem solid rgba(184, 134, 11, 0.3);
 }
 
 .footer-content {
@@ -1137,7 +1175,7 @@ footer {
 }
 
 .footer-section h3 {
-  color: var(--primary);
+  color: #d4af37;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -1193,9 +1231,10 @@ footer {
 .footer-bottom {
   text-align: center;
   padding: 2rem 0 0;
-  border-top: 1px solid rgba(182, 137, 91, 0.2);
+  border-top: 1px solid rgba(184, 134, 11, 0.3);
   font-size: 0.85rem;
   color: #666;
+  background-color: var(--bg);
 }
 
 /* Responsive Footer */
@@ -1203,6 +1242,11 @@ footer {
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .map {
+    aspect-ratio: 16/9;
+    border-radius: 1%;
   }
 
   .footer-content {
@@ -1218,8 +1262,11 @@ footer {
 
   .contact-content {
     padding: 0 2%;
+    grid-auto-rows: 200px;
   }
-
+  footer {
+    margin-top: 8rem;
+  }
   .footer-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
